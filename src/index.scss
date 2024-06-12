@@ -1,0 +1,30 @@
+@use '@carbon/react/scss/themes' as *;
+@use '@carbon/styles';
+@use '@carbon/themes';
+
+.form {
+  max-width: 400px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+:root {
+  @include themes.theme($white);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include themes.theme($g100);
+  }
+}
+
+[data-carbon-theme='g10'] {
+  @include themes.theme($g10);
+}
+
+[data-carbon-theme='g90'] {
+  @include themes.theme($g90);
+}
+
+[data-carbon-theme='g100'] {
+  @include themes.theme($g100);
+}

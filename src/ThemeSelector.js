@@ -1,25 +1,39 @@
-import { default as Dropdown } from '@carbon/react';
-let items =[{
-    id : 'white',
-    value:'white'
-},
-{
-    id : 'g10',
-    value:'g10'
-},
-{
-    id : 'g90',
-    value:'g90'
-},
-{
-    id : 'g100',
-    value:'g100'
-}
-]
-let ThemeSelector =()=>{
-   return ( <Dropdown id="default" onSelectionChange={(val)=>{}
+import { Dropdown } from '@carbon/react';
+import {  white,
+    g10,
+    g90,
+    g100, } from '@carbon/themes';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
-   } titleText="Theme" helperText="Change your theme" initialSelectedItem={items[1]} label="Option 1" items={items} itemToString={item => item ? item.text : ''} />
-)}
+const availableThemes = [
+  { label: 'White', value: white },
+  { label: 'G90', value: g90 },
+];
+
+const ThemeSelector = ({ handleSelectionChange }) => {
+  const [selectedTheme, setSelectedTheme] = useState(availableThemes[0].value); // Default to first theme
+
+  const handleThemeChange = (selectedItem) => {
+    setSelectedTheme(selectedItem.value);
+    handleSelectionChange(selectedItem.value); // Pass the theme value to the parent
+  };
+
+  return (
+    <Dropdown
+      id="theme-dropdown"
+      label="Theme"
+      titleText='Theme'
+      selectedItem={selectedTheme}
+      items={availableThemes}
+      onChange={handleThemeChange}
+      itemToString={(item) => item.label}
+    />
+  );
+};
+
+ThemeSelector.propTypes = {
+  handleSelectionChange: PropTypes.func.isRequired,
+};
 
 export default ThemeSelector;

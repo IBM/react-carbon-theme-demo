@@ -10,7 +10,7 @@
 :root {
   @include themes.theme($white);
 }
-
+// For system preference to take impact
 @media (prefers-color-scheme: dark) {
   :root {
     @include themes.theme($g100);

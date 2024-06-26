@@ -1,27 +1,23 @@
 import { FormGroup, Stack, TextInput, RadioButtonGroup, RadioButton, Button } from '@carbon/react';
-import ThemeSelector from './ThemeSelector'; // Assuming ThemeSelector is a valid component
+import ThemeSelector from './ThemeSelector';
 import { useEffect, useState } from 'react';
 import { GlobalTheme } from '@carbon/react';
 
 function App() {
-  const [selected, setSelected] = useState('white'); // Use `selectedTheme` for better clarity
+  const [selectedTheme, setSelectedTheme] = useState('white');
 
-  const handleChange = (selectedTheme) => { // Update function name and parameter
-    setSelected(selectedTheme);
-    console.log('Theme changed:', this.props.selectedItem);
+  const handleChange = (theme) => {
+    setSelectedTheme(theme);
   };
 
   useEffect(() => {
-    console.log('Updating theme');
-    console.log(selected);
-    document.documentElement.setAttribute('data-carbon-theme', selected);
-  }, [selected]); // Only update on theme change
+    document.documentElement.setAttribute('data-carbon-theme', selectedTheme);
+  }, [selectedTheme]);
 
   return (
-
-    <GlobalTheme theme={selected}>
+    <GlobalTheme theme={selectedTheme}>
       <div className="App">
-        <ThemeSelector handleSelectionChange={handleChange}/>
+        <ThemeSelector handleSelectionChange={handleChange} />
         <header>
           <title>Carbon Theming</title>
         </header>
@@ -38,18 +34,15 @@ function App() {
                 <RadioButton labelText="Male" value="radio-1" id="radio-1" />
                 <RadioButton labelText="Female" value="radio-2" id="radio-2" />
                 <RadioButton labelText="Other" value="radio-3" id="radio-3" />
-                <RadioButton
-                  labelText="Doesn't Want to Mention"
-                  value="radio-4" // Assign a unique value
-                  id="radio-4"
-                />
+                <RadioButton labelText="Doesn't Want to Mention" value="radio-4" id="radio-4" />
               </RadioButtonGroup>
               <Button>Submit</Button>
             </Stack>
           </FormGroup>
         </body>
       </div>
-    </GlobalTheme>);
+    </GlobalTheme>
+  );
 }
 
 export default App;

@@ -11,12 +11,15 @@ const availableThemes = [
   { label: 'G90', value: g90 },
 ];
 
-const ThemeSelector = ({ handleSelectionChange }) => {
+const ThemeSelector = ({ handleSelectionChange,
+  selectedItem
+ }) => {
   const [selectedTheme, setSelectedTheme] = useState(availableThemes[0].value); // Default to first theme
 
   const handleThemeChange = (selectedItem) => {
     setSelectedTheme(selectedItem.value);
     handleSelectionChange(selectedItem.value); // Pass the theme value to the parent
+    console.log(selectedItem.label);
   };
 
   return (

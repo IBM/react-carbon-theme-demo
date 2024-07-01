@@ -5,7 +5,9 @@ import PropTypes from 'prop-types';
 
 const availableThemes = [
   { label: 'White', value: 'white' },
+  { label: 'G10', value: 'g10' },
   { label: 'G90', value: 'g90' },
+  { label: 'G100', value: 'g100' },
 ];
 
 const ThemeSelector = ({ handleSelectionChange }) => {

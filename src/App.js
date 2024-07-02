@@ -47,13 +47,13 @@ function App() {
   return (
     <GlobalTheme theme={selectedTheme}>
       <div className="App">
-        <ThemeSelector handleSelectionChange={handleChange} />
         <header>
           <title>Carbon Theming</title>
         </header>
         <body className="App-header">
           <FormGroup className="form">
-          <h6>Update Form</h6>
+          <ThemeSelector handleSelectionChange={handleChange} />
+          <h4>Personal details</h4>
           <br/>
             <Stack gap={7}>
               <TextInput
@@ -79,10 +79,9 @@ function App() {
                 <RadioButton labelText="Other" value="radio-3" id="radio-3" />
                 <RadioButton labelText="Doesn't Want to Mention" value="radio-4" id="radio-4" />
               </RadioButtonGroup>
-              <div style={{ display: 'flex', alignItems: 'center'}}>
-                <Button onClick={handleClick} style={{ marginRight: '10px' }}>Submit</Button>
-                <CustomComponent onClick={handleClick}>Create Alert (Non-carbon component)</CustomComponent>
-              </div>
+              <Button onClick={handleClick} style={{ marginRight: '10px' }}>Submit</Button>
+              <h4>Non Carbon Component</h4>
+              <CustomComponent onClick={handleClick}>Show Details</CustomComponent>
               <Modal isOpen={modalOpen} onClose={closeModal} content={modalContent} />
             </Stack>
           </FormGroup>

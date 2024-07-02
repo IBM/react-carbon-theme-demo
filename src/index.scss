@@ -2,9 +2,12 @@
 @use '@carbon/styles';
 @use '@carbon/themes';
 
+.cds--fieldset {
+  margin-left: 19px !important;
+}
 .form {
   max-width: 400px;
-  padding-left: 20px;
+  padding-left: 50px;
   padding-top: 20px;
 }
 :root {

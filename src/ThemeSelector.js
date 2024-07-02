@@ -1,5 +1,4 @@
 import { Dropdown } from '@carbon/react';
-import { white, g90 } from '@carbon/themes';
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
@@ -21,13 +20,13 @@ const ThemeSelector = ({ handleSelectionChange }) => {
   return (
     <Dropdown
       id="theme-dropdown"
-      label="Theme"
-      titleText="Theme"
+      label="Theme Switcher"
+      titleText="Theme Switcher"
       selectedItem={selectedTheme}
       items={availableThemes}
       onChange={handleThemeChange}
       itemToString={(item) => (item ? item.label : '')}
-      style={{ width: '385px', margin: '10px 0 20px 15px'}} 
+      style={{ width: '385px', marginBottom: '30px'}} 
     />
   );
 };

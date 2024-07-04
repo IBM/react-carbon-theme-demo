@@ -261,3 +261,5 @@ The usage of tokens for the button color makes it to respect the theme used in t
 
 Note - source code for the blog is available [here](https://github.com/npovatho/react-carbon-theme-demo)
 
+
+Authors : [Nimmy Povathody](npovatho@in.ibm.com), [Sowmya S](sowmya.s2@in.ibm.com)

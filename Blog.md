@@ -163,10 +163,10 @@ To add a custom theme toggling to your application, first design your component 
 
 ### Step 1
 
-Here I am going to use carbon dropdown component from [here](https://react.carbondesignsystem.com/?path=/docs/components-dropdown--overview)
- Added a file `ThemeSelector.js` with the below to have the dropdown with react state management.
+Here I am going to use carbon dropdown component from [here](https://react.carbondesignsystem.com/?path=/docs/components-dropdown--overview).
+ Add a file `ThemeSelector.js` with the below to have the dropdown with react state management.
 
- Note : Exit your application if it is running before updating the code
+ *Note : Exit your application if it is running before updating the code*
 
  ```js
 import { Dropdown } from '@carbon/react';
@@ -208,7 +208,7 @@ export default ThemeSelector;
 
 ### Step 2
 
-Once you have it, lets add css attributes which would let us switch the theme in our scss file
+Once you have it, lets add css attributes which would let us switch the theme, into the style file.
 
 ```scss
 [data-carbon-theme='g10'] {
@@ -225,24 +225,26 @@ Once you have it, lets add css attributes which would let us switch the theme in
 
 ### Step 3
 
-Now lets update HOC(Higher Order Component), here in App.js for the state changes to reflect the theming and add the theme effect
+Now lets update HOC(Higher Order Component), here in App.js, for the state changes, to reflect the theming and add the theme effect.
 
-Refer to the source code for the component [here](https://github.com/npovatho/react-carbon-theme-demo/blob/main/src/App.js)
+Reference to the source code for the component is [here](https://github.com/npovatho/react-carbon-theme-demo/blob/main/src/App.js)
 
 ### Step 4
 
 Launch your application by running `npm run start`
 
-And you will be able to toggle the theme using the dropdown desgined
+And look at how you will be able to toggle the theme using the dropdown desgined
+
+[Theme toggling via UI element](./images/ThemeToggler.mov)
 
 ## Developing Themed Custom Components using Carbon Tokens
 
 Instead of using carbon prestyled component, we can integrate the theme style switching to custom component.
 Carbon has color tokens with specific names when applied will provide the desired color styling that would respect the theme in which the application is in.
 
-Here we have a button custom component which opens a modal window, in which we are applying theme token to replicate the behaviour
+Here we have a button which opens a modal window, into which we are applying carbon token to replicate the behaviour
 
-The scss applied is where the difference is and it is as below
+The scss applied makes this possible and it is as below
 
 ```css
 @use '@carbon/styles';
@@ -259,7 +261,7 @@ The usage of tokens for the button color makes it to respect the theme used in t
 
 <img src='./images/CustomComponent.png' alt='custom component when theme tokens are applied'>
 
-Note - source code for the blog is available [here](https://github.com/npovatho/react-carbon-theme-demo)
+*Source code for the blog is available [here](https://github.com/npovatho/react-carbon-theme-demo)*
 
 
 Authors : [Nimmy Povathody](npovatho@in.ibm.com), [Sowmya S](sowmya.s2@in.ibm.com)

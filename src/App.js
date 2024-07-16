@@ -1,17 +1,38 @@
+/******************************************************************
+  Copyright 2024 IBM Corp. All Rights Reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+ *********************************************************************/
+
+
 import { FormGroup, Stack, TextInput, RadioButtonGroup, RadioButton, Button } from '@carbon/react';
-import ThemeSelector from './ThemeSelector';
+import ThemeSelector from './CustomComponent/ThemeSelector';
 import { useEffect, useState } from 'react';
 import { GlobalTheme } from '@carbon/react';
 import CustomComponent from './CustomComponent/CustomComponent';
-import Modal from './CustomComponent/Modal'; 
+import Modal from './CustomComponent/Modal';
+let currentTheme = 'white';
+(window.matchMedia('(prefers-color-scheme: dark)').matches) ? currentTheme = 'g100' : currentTheme = 'white';
 
 function App() {
-  const [selectedTheme, setSelectedTheme] = useState('white');
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [gender, setGender] = useState('radio-1');
-  const [modalOpen, setModalOpen] = useState(false); 
+  const [modalOpen, setModalOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
+
+  const [selectedTheme, setSelectedTheme] = useState(currentTheme);
 
   const handleChange = (theme) => {
     setSelectedTheme(theme);
@@ -52,9 +73,9 @@ function App() {
         </header>
         <body className="App-header">
           <FormGroup className="form">
-          <ThemeSelector handleSelectionChange={handleChange} />
-          <h4>Personal details</h4>
-          <br/>
+            <ThemeSelector handleSelectionChange={handleChange} />
+            <h4>Personal details</h4>
+            <br />
             <Stack gap={7}>
               <TextInput
                 id="one"

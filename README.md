@@ -15,3 +15,5 @@ npm run start
 ```
 
 And the application will run at port 3000
+
+Please contact `@npovatho` for any clarifications
